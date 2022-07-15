@@ -51,13 +51,6 @@ class HomeController extends Controller
             ->setPassword(config('app.password'))
             ->dumpToFile('dump.sql');
 
-//        PostgreSql::create()
-//            ->setHost('ec2-3-219-52-220.compute-1.amazonaws.com')
-//            ->setDbName("d99cetgcoeavq8")
-//            ->setUserName('wnhzrvdspdhtvn')
-//            ->setPassword('97167c85b02cbd4c7dc5d91a0d1bd106cb7c0e146ce6d9383290632f3dc227da')
-//            ->dumpToFile('dump.sql');
-
         return response()->download('dump.sql');
 
     }
