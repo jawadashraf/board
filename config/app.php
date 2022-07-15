@@ -28,7 +28,7 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
-
+    'databaseHost' => env('DB_HOST'),
     'databaseName' => env('DB_DATABASE'),
     'userName' => env('DB_USERNAME'),
     'password' => env('DB_PASSWORD'),
