@@ -6,6 +6,7 @@ use App\Models\Card;
 use App\Models\Column;
 use Illuminate\Http\Request;
 use Spatie\DbDumper\Databases\MySql;
+use Spatie\DbDumper\Databases\PostgreSql;
 use Spatie\DbDumper\Databases\Sqlite;
 
 class HomeController extends Controller
@@ -39,8 +40,14 @@ class HomeController extends Controller
 //            ->setPassword('')
 //            ->dumpToFile('dump.sql');
 
-        Sqlite::create()
-            ->setDbName(database_path('database.sqlite'))
+//        Sqlite::create()
+//            ->setDbName(database_path('database.sqlite'))
+//            ->dumpToFile('dump.sql');
+
+        PostgreSql::create()
+            ->setDbName(config('app.databaseName'))
+            ->setUserName(config('app.userName'))
+            ->setPassword(config('app.password'))
             ->dumpToFile('dump.sql');
 
         return response()->download('dump.sql');
