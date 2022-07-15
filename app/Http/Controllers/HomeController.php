@@ -44,10 +44,16 @@ class HomeController extends Controller
 //            ->setDbName(database_path('database.sqlite'))
 //            ->dumpToFile('dump.sql');
 
+//        PostgreSql::create()
+//            ->setDbName(config('app.databaseName'))
+//            ->setUserName(config('app.userName'))
+//            ->setPassword(config('app.password'))
+//            ->dumpToFile('dump.sql');
+
         PostgreSql::create()
-            ->setDbName(config('app.databaseName'))
-            ->setUserName(config('app.userName'))
-            ->setPassword(config('app.password'))
+            ->setDbName('d99cetgcoeavq8')
+            ->setUserName(config('wnhzrvdspdhtvn'))
+            ->setPassword(config('97167c85b02cbd4c7dc5d91a0d1bd106cb7c0e146ce6d9383290632f3dc227da'))
             ->dumpToFile('dump.sql');
 
         return response()->download('dump.sql');
