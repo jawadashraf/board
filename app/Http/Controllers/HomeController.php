@@ -51,9 +51,9 @@ class HomeController extends Controller
 //            ->dumpToFile('dump.sql');
 
         PostgreSql::create()
-            ->setDbName('d99cetgcoeavq8')
-            ->setUserName(config('wnhzrvdspdhtvn'))
-            ->setPassword(config('97167c85b02cbd4c7dc5d91a0d1bd106cb7c0e146ce6d9383290632f3dc227da'))
+            ->setDbName("d99cetgcoeavq8")
+            ->setUserName('wnhzrvdspdhtvn')
+            ->setPassword('97167c85b02cbd4c7dc5d91a0d1bd106cb7c0e146ce6d9383290632f3dc227da')
             ->dumpToFile('dump.sql');
 
         return response()->download('dump.sql');
