@@ -1,0 +1,233 @@
+.board__wrapper{
+    overflow: hidden;
+    position: relative;
+
+
+    @media (min-width: 768px) {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .board__container{
+
+        display: flex;
+        overflow: auto;
+        flex-direction: column;
+        height: 100%;
+
+
+        .board{
+
+            display: flex;
+            overflow-x: auto;
+            position: relative;
+            padding: 0.5rem;
+            height: 100%;
+
+            .column__container{
+                margin-right: 1.5rem;
+                flex-shrink: 0;
+                width: 80%;
+                max-width: 20rem;
+                position: relative;
+                .remove__column__button{
+                    padding: 0.5rem;
+                    font-size: 1.2rem;
+                    line-height: 1.2rem;
+                    position: absolute;
+                    top: -9px;
+                    right: -15px;
+                    z-index: 10;
+
+                    //background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%) !important;
+                    background-color: red !important;
+                    border: none;
+                    color: white;
+                    //padding: 2em !important;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    //font-size: 16px;
+                    margin: 2px;
+                    border-radius: 50%;
+                    width: 1em;
+                    height: 1em;
+
+                    :hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                .column{
+
+                    overflow: hidden;
+                    border-radius: 0.375rem;
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+
+                   .column__head{
+                       display: flex;
+                       padding: 0.75rem;
+                       background-color: #201ebd; //#1E40AF;
+                       justify-content: space-between;
+                       align-items: baseline;
+                       position: relative;
+
+                       .column__title{
+                           color: #ffffff;
+                           font-weight: 500;
+                       }
+
+                       .add__card__button{
+                           padding: 0.25rem 0.5rem;
+                           font-size: 0.875rem;
+                           line-height: 1.25rem;
+                           //color: rgb(249 115 22);
+                           color: #16f9e2;
+
+                           :hover {
+                               text-decoration: underline;
+                           }
+                       }
+
+
+
+                   }
+
+                    .column__body{
+                        padding: 0.5rem;
+                        background-color: #DBEAFE;
+
+                        .form__card{
+                            display: flex;
+                            overflow: hidden;
+                            position: relative;
+                            margin-bottom: 0.75rem;
+                            background-color: #ffffff;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            border-radius: 0.375rem;
+                            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+                            .form__body{
+                                padding: 0.75rem;
+                                flex: 1;
+
+                                input{
+                                    display: block;
+                                    padding: 0.25rem 0.5rem;
+                                    font-size: 1.125rem;
+                                    line-height: 1.75rem;
+                                    width: 90%;
+                                    border-radius: 0.25rem;
+                                    border-bottom-width: 1px;
+                                    border-color: #1E40AF;
+                                }
+
+                                textarea{
+                                    display: block;
+                                    //padding: 0.25rem;
+                                    padding: 0.5rem;
+                                    margin-top: 0.75rem;
+                                    font-size: 0.875rem;
+                                    line-height: 1.25rem;
+                                    width: 90%;
+                                    border-radius: 0.25rem;
+                                    border-width: 1px;
+                                }
+
+                                .error__message{
+                                    color: #EF4444;
+                                    font-size: 0.75rem;
+                                    line-height: 1rem;
+                                }
+                            }
+
+                            .form__footer{
+                                display: flex;
+                                padding: 0.75rem;
+                                background-color: #F3F4F6;
+                                font-size: 0.875rem;
+                                line-height: 1.25rem;
+                                justify-content: space-between;
+                                align-items: flex-end;
+
+
+
+                                .button__cancel{
+                                    padding-top: 0.25rem;
+                                    padding-bottom: 0.25rem;
+                                    color: #4B5563;
+                                    line-height: 1.25rem;
+
+                                    :hover {
+                                        color: #374151;
+                                    }
+                                }
+
+                                .button__submit{
+                                    padding: 0.25rem 0.75rem !important;
+                                    color: #ffffff;
+                                    line-height: 1.25rem;
+                                    border-radius: 0.25rem;
+                                    background-color: rgb(249 115 22) !important;
+
+                                    :hover {
+                                        background-color: rgb(246, 144, 71);
+                                    }
+                                }
+                            }
+
+                        }
+
+                        .draggable__for__card{
+                            overflow: hidden;
+                            flex: 1;
+
+                            .transition__group{
+                                display: flex;
+                                overflow-y: auto;
+                                overflow-x: hidden;
+                                flex-direction: column;
+                                flex: 1;
+                                height: 100%;
+                                border-radius: 0.25rem;
+                                box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+
+                                .card{
+                                    display: flex;
+                                    padding: 1rem;
+                                    margin-bottom: 0.75rem;
+                                    background-color: #ffffff;
+                                    flex-direction: column;
+                                    border-radius: 0.375rem;
+                                    cursor: pointer;
+                                    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+                                    :hover {
+                                        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                                    }
+
+                                    .card__title{
+                                        display: block;
+                                        margin-bottom: 0.5rem;
+                                        color: #111827;
+                                        font-size: 1.25rem;
+                                        line-height: 1.75rem;
+                                    }
+
+                                    .card__description{
+                                        color: #374151;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+    }
+}

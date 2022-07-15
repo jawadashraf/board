@@ -1,0 +1,101 @@
+body{
+    //background-color: #F3F4F6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(90deg, #f66e87 0%, #3F5EFB 100%);
+    //background: linear-gradient(90deg, #3F5EFB 0%, #f66e87 100%);
+    //background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+    //background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    //background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+    //background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+    //background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#app {
+    position: relative;
+    height: 100%;
+}
+
+nav{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    //background: linear-gradient(90deg, #3F5EFB 0%, #FC466B 100%);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+    .container{
+        width: 100%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+
+        @media (min-width: 768px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .items{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .brand{
+                margin-right: 1.5rem;
+
+                .brand-link{
+                    color: #F3F4F6;
+                    font-size: 1.125rem;
+                    line-height: 1.75rem;
+                    font-weight: 600;
+                    text-decoration: none;
+                }
+            }
+
+            .right__nav__items{
+                text-align: right;
+                flex: 1;
+            }
+        }
+
+    }
+
+}
+
+button{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.fab__wrapper{
+    position: absolute; right: 8px; bottom: 8px;
+}
+.fab__button{
+    background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%) !important;
+    border: none;
+    color: white;
+    //padding: 2em !important;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+
+}
+
