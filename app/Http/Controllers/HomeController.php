@@ -44,6 +44,9 @@ class HomeController extends Controller
 //            ->setDbName(database_path('database.sqlite'))
 //            ->dumpToFile('dump.sql');
 
+        
+
+
         PostgreSql::create()
             ->setHost(config('app.databaseHost'))
             ->setDbName(config('app.databaseName'))

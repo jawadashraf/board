@@ -2121,7 +2121,8 @@ __webpack_require__.r(__webpack_exports__);
       // Find the index of the column where we should add the card
       var columnIndex = this.columns.findIndex(function (column) {
         return column.id === newCard.column_id;
-      }); // Add newly created card to our column
+      });
+      console.log(newCard); // Add newly created card to our column
 
       if (!this.columns[columnIndex].cards) this.columns[columnIndex].cards = [];
       this.columns[columnIndex].cards.push(newCard); // Reset and close the AddCardForm
@@ -2143,6 +2144,7 @@ __webpack_require__.r(__webpack_exports__);
       this.closeUpdateCardForm();
     },
     handleCardMoved: function handleCardMoved(evt) {
+      console.log(this.columns);
       axios.put("/cards/sync", {
         columns: this.columns
       }).then(function (response) {
@@ -2158,6 +2160,7 @@ __webpack_require__.r(__webpack_exports__);
       this.newColumn = 0;
     },
     handleColumnAdded: function handleColumnAdded(newColumn) {
+      newColumn.cards = [];
       this.columns.push(newColumn);
       this.closeAddColumnForm();
     },

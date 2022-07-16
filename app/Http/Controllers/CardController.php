@@ -41,7 +41,7 @@ class CardController extends Controller
         foreach ($request->columns as $column) {
             foreach ($column['cards'] as $i => $card) {
                 $order = $i + 1;
-                if ($card['column_id'] !== $card['id'] || $card['order'] !== $order) {
+                if ($card['column_id'] !== $column['id'] || $card['order'] !== $order) {
                     Card::find($card['id'])
                         ->update(['column_id' => $column['id'], 'order' => $order]);
                 }

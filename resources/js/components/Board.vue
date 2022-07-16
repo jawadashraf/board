@@ -157,11 +157,12 @@ export default {
             const columnIndex = this.columns.findIndex(
                 column => column.id === newCard.column_id
             );
-
+            console.log(newCard);
 
             // Add newly created card to our column
             if(!this.columns[columnIndex].cards) this.columns[columnIndex].cards = []
             this.columns[columnIndex].cards.push(newCard);
+
 
             // Reset and close the AddCardForm
             this.closeAddCardForm();
@@ -187,6 +188,8 @@ export default {
 
         handleCardMoved(evt) {
 
+            console.log(this.columns);
+
             axios.put("/cards/sync", { columns: this.columns })
                 .then((response) => {
                     console.log(response);
@@ -205,7 +208,7 @@ export default {
         },
 
         handleColumnAdded(newColumn) {
-
+            newColumn.cards = [];
             this.columns.push(newColumn);
 
             this.closeAddColumnForm();
